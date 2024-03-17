@@ -27,16 +27,14 @@ public class Reptil extends Animal {
 		return "reptar";
 	}
 	
-	public static Reptil crearIguana(String nombre, int edad, String genero) {
+	public static void crearIguana(String nombre, int edad, String genero) {
 		Reptil iguana= new Reptil(nombre, edad, "humedal", genero, "verde", 3);
 		iguanas++;
-		return iguana;
 	}
 	
-	public static Reptil crearSerpiente(String nombre, int edad, String genero) {
+	public static void crearSerpiente(String nombre, int edad, String genero) {
 		Reptil serpiente = new Reptil(nombre, edad, "jungla", genero, "blanco",1);
 		serpientes++;
-		return serpiente;
 	}
 	
 	//METODOS GETTER Y SETTER

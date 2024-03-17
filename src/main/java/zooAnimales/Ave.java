@@ -23,16 +23,14 @@ public class Ave extends Animal {
 		return "volar";
 	}
 	
-	public static Ave crearHalcon(String nombre, int edad, String genero) {
+	public static void crearHalcon(String nombre, int edad, String genero) {
 		Ave halcon= new Ave(nombre,edad,"montanas", genero, "cafe glorioso" );
 		halcones++;
-		return halcon;
 	}
 	
-	public static Ave crearAguila(String nombre, int edad, String genero) {
+	public static void crearAguila(String nombre, int edad, String genero) {
 		Ave aguila= new Ave(nombre,edad,"montanas", genero, "blanco y amarillo" );
 		aguilas++;
-		return aguila;
 	}
 	//METODOS GETTER Y SETTER
 	
