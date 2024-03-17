@@ -2,7 +2,7 @@ package zooAnimales;
 import gestion.Zona;
 
 public class Animal {
-	private static int totalAnimales=0;
+	private static int totalAnimales=;
 	
 	private String nombre;
 	private int edad;
@@ -15,6 +15,7 @@ public class Animal {
 		this.edad= edad;
 		this.habitat = habitat;
 		this.genero = genero;
+		this.zona= null;
 		totalAnimales++;
 	}
 	public Animal() {
@@ -23,18 +24,26 @@ public class Animal {
 	
 	@Override
 	public String toString(){
-		if (zona!=null) {
-		return "Mi nombre es " + nombre + ", tengo una edad de "+ edad +", habito en "
-				+ habitat +" y mi genero es " + genero + ", la zona en la que me ubico es "
-				+ zona + "en el " + zona.getZoo ; }
+		if (getZona()!=null) {
+		return "Mi nombre es " + getNombre() + ", tengo una edad de "+ getEdad() +", habito en "
+				+ getHabitat() +" y mi genero es " + getGenero() + ", la zona en la que me ubico es "
+				+ getZona().getNombre() + "en el " + getZona().getZoo().getNombre() ; }
 		else {
-			return "Mi nombre es " + nombre + ", tengo la edad de "+ edad + ", habito en "
-					+ habitat + " y mi genero es " + genero;	
+			return "Mi nombre es " + getNombre() + ", tengo la edad de "+ getEdad() + ", habito en "
+					+ getHabitat() + " y mi genero es " + getGenero();	
 		}
    }
 	
    public String movimiento() {
 	   return "desplazarse";
+	   }
+   
+   public static String totalPorTipo(){
+	   return "Mamiferos: "+ Mamifero.getListado().size()+"\n"+ 
+				"Aves: "+ Ave.getListado().size()+"\n"+ 
+				"Reptiles: "+Reptil.getListado().size()+"\n" + 
+				"Peces: " +Pez.getListado().size()+"\n"+ 
+				"Anfibios: "+Anfibio.getListado().size();
 	   }
    
    //METODOS SETTER Y GETTER PARA ATRIBUTOS
@@ -67,11 +76,11 @@ public class Animal {
 	   return genero;
    }
    
-   public int getTotalAnimales() {
+   public static int getTotalAnimales() {
 	   return totalAnimales;
    }
-   public void setAnimales(int totalAnimales) {
-	   this.totalAnimales= totalAnimales;
+   public static void setAnimales(int totalAnimales) {
+	   Animal.totalAnimales= totalAnimales;
    }
    public Zona getZona() {
        return zona;

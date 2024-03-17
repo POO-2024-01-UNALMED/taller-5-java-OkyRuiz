@@ -1,36 +1,37 @@
 package gestion;
 import java.util.ArrayList;
+import java.util.Iterator;
+import zooAnimales.Animal;
+
 public class Zoologico {
 	private String nombre;
 	private String ubicacion;
 	private ArrayList<Zona> zonas = new ArrayList<>();
 	
-	// Constructor 
+	//CONSTRUCTORES
 	public Zoologico (String nombre, String ubicacion){
 		this.nombre = nombre;
 		this.ubicacion = ubicacion;
 	}
-	
-	// Constructor Vacio
 	public Zoologico(){
 		
 	}
 	
-	// Metodos
 	public void agregarZonas(Zona zona) {
-		this.zonas.add(zona);
-		zona.setZoo(this);
+		zonas.add(zona);
+	
 	}
 	
 	public int cantidadTotalAnimales() {
-		int cantidadTotalAnimales = 0;
-		for (Zona zona : zonas) {
-			cantidadTotalAnimales += zona.cantidadAnimales();
+		int totalAnimales = 0;
+		for (Zona zonas : zonas) {
+			totalAnimales += zonas.cantidadAnimales();
 		}
-		return cantidadTotalAnimales;
+		return totalAnimales;
 	}
 	
-	// Métodos get y set
+	// METODOS SETTTER Y GETTER
+	
 	public String getNombre () {
 		return this.nombre;
 	}

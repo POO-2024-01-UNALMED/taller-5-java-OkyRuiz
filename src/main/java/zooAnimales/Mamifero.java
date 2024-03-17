@@ -3,8 +3,8 @@ import java.util.ArrayList;
 
 public class Mamifero extends Animal{
 	private static ArrayList<Mamifero> listado = new ArrayList<>();
-	public static int caballos;
-	public static int leones;
+	public static int caballos = 0;
+	public static int leones =0;
 	private boolean pelaje;
 	private int patas;
 	
@@ -12,23 +12,26 @@ public class Mamifero extends Animal{
 		super(nombre, edad, habitat,genero);
 		this.pelaje= pelaje;
 		this.patas= patas;
-		listado.add(this);
-	}
-	public Mamifero() {
-		listado.add(this);
-	}
-	public void crearCaballos(String nombre, int edad, String genero) {
-		Mamifero caballo = new Mamifero(nombre, edad, "pradera", genero, true, 4);
-		caballos++;	
+		Mamifero.listado.add(this);
 	}
 	
-	public void crearLeon(String nombre, int edad, String genero) {
+	public Mamifero() {
+		Mamifero.listado.add(this);
+	}
+	public static Mamifero crearCaballos(String nombre, int edad, String genero) {
+		Mamifero caballo = new Mamifero(nombre, edad, "pradera", genero, true, 4);
+		caballos++;
+		return caballo;
+	}
+	
+	public static  Mamifero crearLeon(String nombre, int edad, String genero) {
 		Mamifero Leon = new Mamifero(nombre, edad, "selva", genero, true, 4);
 		leones++;
+		return Leon;
 	}
 	
 	public int cantidadMamiferos() {
-		return listado.size();
+		return Mamifero.listado.size();
 	}
 	
 	//METODOS GETTER Y SETTER
@@ -46,11 +49,11 @@ public class Mamifero extends Animal{
 		return patas;
 	}
 	
-	public void setListado(ArrayList<Mamifero> listado) {
-		this.listado= listado;	
+	public static void setListado(ArrayList<Mamifero> listado) {
+		Mamifero.listado= listado;	
 	}
 	
-	public ArrayList<Mamifero> getListado(){
+	public static ArrayList<Mamifero> getListado(){
 		return listado;
 	}
 	

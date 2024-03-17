@@ -14,34 +14,37 @@ public class Reptil extends Animal {
 		super(nombre,edad, habitat,genero);
 		this.colorEscamas= colorEscamas;
 		this.largoCola= largoCola;
-		listado.add(this);
+		Reptil.listado.add(this);
 	}
 	public Reptil() {
-		listado.add(this);
+		Reptil.listado.add(this);
 	}
 	
 	public int cantidadReptiles() {
-		return listado.size();
+		return Reptil.listado.size();
 	}
 	public String movimiento() {
 		return "reptar";
 	}
 	
-	public void crearIguana(String nombre, int edad, String genero) {
+	public static Reptil crearIguana(String nombre, int edad, String genero) {
 		Reptil iguana= new Reptil(nombre, edad, "humedal", genero, "verde", 3);
 		iguanas++;
+		return iguana;
 	}
 	
-	public void crearSerpiente(String nombre, int edad, String genero) {
+	public static Reptil crearSerpiente(String nombre, int edad, String genero) {
 		Reptil serpiente = new Reptil(nombre, edad, "jungla", genero, "blanco",1);
+		serpientes++;
+		return serpiente;
 	}
 	
 	//METODOS GETTER Y SETTER
-	public void setListado(ArrayList<Reptil> listado) {
-		this.listado= listado;	
+	public static void setListado(ArrayList<Reptil> listado) {
+		Reptil.listado= listado;	
 	}
 
-	public ArrayList<Reptil> getListado(){
+	public static ArrayList<Reptil> getListado(){
 		return listado;
 	}
 	

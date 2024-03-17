@@ -9,33 +9,35 @@ public class Ave extends Animal {
 	public Ave(String nombre, int edad, String habitat, String genero, String colorPlumas) {
 		super(nombre,edad, habitat,genero);
 		this.colorPlumas= colorPlumas;
-		listado.add(this);
+		Ave.listado.add(this);
 	}
 	
 	public Ave() {
-		listado.add(this);
+		Ave.listado.add(this);
 	}
 	public int cantidadAves() {
-		return listado.size();
+		return Ave.listado.size();
 	}
 	
 	public String movimiento() {
 		return "volar";
 	}
 	
-	public void crearHalcon(String nombre, int edad, String genero) {
+	public static Ave crearHalcon(String nombre, int edad, String genero) {
 		Ave halcon= new Ave(nombre,edad,"montañas", genero, "cafe glorioso" );
 		halcones++;
+		return halcon;
 	}
 	
-	public void crearAguila(String nombre, int edad, String genero) {
-		Ave halcon= new Ave(nombre,edad,"montañas", genero, "blanco y amarillo" );
+	public static Ave crearAguila(String nombre, int edad, String genero) {
+		Ave aguila= new Ave(nombre,edad,"montañas", genero, "blanco y amarillo" );
 		aguilas++;
+		return aguila;
 	}
 	//METODOS GETTER Y SETTER
 	
-	public void setListado(ArrayList<Ave> listado) {
-		this.listado= listado;	
+	public static void setListado(ArrayList<Ave> listado) {
+		Ave.listado= listado;	
 	}
 	
 	public ArrayList<Ave> getListado(){

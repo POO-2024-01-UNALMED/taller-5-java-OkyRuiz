@@ -14,33 +14,35 @@ public class Pez extends Animal{
 		super(nombre,edad, habitat,genero);
 		this.colorEscamas= colorEscamas;
 		this.cantidadAletas = cantidadAletas;
-		listado.add(this);
+		Pez.listado.add(this);
 	}
 	public Pez() {
-		listado.add(this);
+		Pez.listado.add(this);
 	}
 	
 	public int cantidadPeces() {
-		return listado.size();
+		return Pez.listado.size();
 	}
 	
 	public String movimiento() {
 		return "nadar";
 	}
 	
-	public void crearSalmon(String nombre, int edad, String genero) {
+	public static Pez crearSalmon(String nombre, int edad, String genero) {
 	Pez salmon= new Pez(nombre, edad, "oceano", genero, "rojo", 6);
 	salmones++;
+	return salmon;
 	}
 	
-	public void crearBacalao(String nombre, int edad, String genero) {
+	public static Pez crearBacalao(String nombre, int edad, String genero) {
 		Pez bacalao= new Pez(nombre,edad,"oceano", genero ,"gris",6 );
 		bacalaos++;
+		return bacalao;
 	}
 	
 	//METODOS SETTER Y GETTER
-	public void setListado(ArrayList<Pez> listado) {
-		this.listado= listado;	
+	public static void setListado(ArrayList<Pez> listado) {
+		Pez.listado= listado;	
 	}
 
 	public ArrayList<Pez> getListado(){

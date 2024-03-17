@@ -11,15 +11,15 @@ public class Anfibio extends Animal{
 		super(nombre, edad, habitat, genero);
 		this.colorPiel = colorPiel;
 		this.venenoso = venenoso;
-		listado.add(this);
+		Anfibio.listado.add(this);
 	}
 	
 	public Anfibio () {
-		listado.add(this);
+		Anfibio.listado.add(this);
 	}
 	
 		public int cantidadAnfibios() {
-			return listado.size();
+			return Anfibio.listado.size();
 		}
 		
 		public Anfibio crearRana(String nombre, int edad, String genero) {
@@ -38,11 +38,11 @@ public class Anfibio extends Animal{
 		}
 		
 		  // METODOS SETTER Y GETTER
-	    public ArrayList<Anfibio> getListado() {
+	    public static ArrayList<Anfibio> getListado() {
 	        return listado;
 	    }
-	    public void setListado(ArrayList<Anfibio> listado) {
-	        this.listado = listado;
+	    public  static void setListado(ArrayList<Anfibio> listado) {
+	        Anfibio.listado = listado;
 	    }
 
 	    public String getColorPiel() {
@@ -52,7 +52,7 @@ public class Anfibio extends Animal{
 	        this.colorPiel = colorPiel;
 	    }
 
-	    public boolean isVenenoso() {
+	    public boolean getVenenoso() {
 	        return venenoso;
 	    }
 	    public void setVenenoso(boolean venenoso) {

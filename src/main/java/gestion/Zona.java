@@ -6,21 +6,18 @@ public class Zona {
 	private Zoologico zoo;
 	private ArrayList <Animal> animales = new ArrayList<>();
 	
-	// Constructor
+	// CONSTRUCTORES
     public Zona(String nombre, Zoologico zoo) {
         this.nombre = nombre;
         this.zoo = zoo;
     }
-    
-    
-    public Zona() {
-    	
+   
+    public Zona() {	
     }
     
-    // Métodos
+ 
     public void agregarAnimales(Animal animal) {
     	this.animales.add(animal);
-    	animal.setZona(this);
     }
     
     public int cantidadAnimales() {
