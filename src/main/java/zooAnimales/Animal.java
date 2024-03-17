@@ -27,9 +27,9 @@ public class Animal {
 		if (getZona()!=null) {
 		return "Mi nombre es " + getNombre() + ", tengo una edad de "+ getEdad() +", habito en "
 				+ getHabitat() +" y mi genero es " + getGenero() + ", la zona en la que me ubico es "
-				+ getZona().getNombre() + "en el " + getZona().getZoo().getNombre() ; }
+				+ getZona().getNombre() + " en el " + getZona().getZoo().getNombre(); }
 		else {
-			return "Mi nombre es " + getNombre() + ", tengo la edad de "+ getEdad() + ", habito en "
+			return "Mi nombre es " + getNombre() + ", tengo una edad de "+ getEdad() + ", habito en "
 					+ getHabitat() + " y mi genero es " + getGenero();	
 		}
    }
@@ -79,7 +79,7 @@ public class Animal {
    public static int getTotalAnimales() {
 	   return totalAnimales;
    }
-   public static void setAnimales(int totalAnimales) {
+   public static void setTotalAnimales(int totalAnimales) {
 	   Animal.totalAnimales= totalAnimales;
    }
    public Zona getZona() {
