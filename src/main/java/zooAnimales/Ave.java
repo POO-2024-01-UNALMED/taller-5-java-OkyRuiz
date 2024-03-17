@@ -40,7 +40,7 @@ public class Ave extends Animal {
 		Ave.listado= listado;	
 	}
 	
-	public ArrayList<Ave> getListado(){
+	public static ArrayList<Ave> getListado(){
 		return listado;
 	}
 	

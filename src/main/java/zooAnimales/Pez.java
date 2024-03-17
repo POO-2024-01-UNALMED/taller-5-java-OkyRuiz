@@ -45,7 +45,7 @@ public class Pez extends Animal{
 		Pez.listado= listado;	
 	}
 
-	public ArrayList<Pez> getListado(){
+	public static ArrayList<Pez> getListado(){
 		return listado;
 	}
 	
